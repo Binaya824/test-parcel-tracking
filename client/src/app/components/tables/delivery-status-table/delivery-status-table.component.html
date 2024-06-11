@@ -30,7 +30,13 @@
       </div>
       <div class="flex flex-col gap-3 h-fit items-center">
         <button class="border border-black w-fit p-2 rounded-xl" mat-button (click)="openDialog()">New Update</button>
-        <button class="border border-black w-fit p-2 rounded-xl">Mark as Delivered</button>
+        <div class="border border-black w-fit p-2 rounded-xl relative">
+          <p style="margin: 0;" (click)="showDeliveredStatus[i] = !showDeliveredStatus[i]" class="cursor-pointer select-none">Mark as Delivered</p>
+          <div *ngIf="showDeliveredStatus[i]" class="absolute -bottom-14 z-20 bg-blue-400 p-2 rounded-md flex flex-col">
+            <span class="hover:bg-white cursor-pointer rounded-sm px-1" (click)="showDeliveredStatus[i] = !showDeliveredStatus[i]">Apply Current</span>
+            <span class="hover:bg-white cursor-pointer rounded-sm px-1" (click)="showDeliveredStatus[i] = !showDeliveredStatus[i]">Apply All</span>
+          </div>
+        </div>
         <div class="">
           <mat-form-field class="w-[10rem] overflow-hidden" title="Choose a Expected delivery Date">
             <mat-label>Expected Date</mat-label>

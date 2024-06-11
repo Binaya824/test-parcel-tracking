@@ -81,14 +81,18 @@ const ELEMENT_DATA: tableElement[] = [
   styleUrl: './delivery-status-table.component.css'
 })
 export class DeliveryStatusTableComponent {
-
-  constructor(private dialog: MatDialog){}
-
   displayedColumns: string[] = ['sl_no','item_details', 'quantity_price', 'delivery_date' , 'delivery_update'];
   dataSource = ELEMENT_DATA;
 
   selected?: Date;
   showPicker: boolean = false;
+  showDeliveredStatus:boolean[] = [];
+
+  constructor(private dialog: MatDialog){
+    this.showDeliveredStatus = Array(this.dataSource.length).fill(false)
+  }
+
+ 
 
   onDateSelect(selectedDate: Date) {
     this.selected = selectedDate;

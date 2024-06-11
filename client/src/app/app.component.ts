@@ -5,6 +5,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { DeliveryStatusModalComponent } from './components/modals/delivery-status-modal/delivery-status-modal.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { TrackShipmentModalComponent } from './components/modals/track-shipment-modal/track-shipment-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +18,22 @@ export class AppComponent {
   title = 'client';
   constructor(public dialog: MatDialog){}
 
-  openDialog(){
-    const dialogRef = this.dialog.open(DeliveryStatusModalComponent , {
+  openDeliveryStatusModal(){
+    const deliveryStatusModalRef = this.dialog.open(DeliveryStatusModalComponent , {
       width: '80%', // Set the width here
     })
 
-    dialogRef.afterClosed().subscribe((result: any) => {
+    deliveryStatusModalRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openTrackShipment(){
+    const trackShipmentModalRef = this.dialog.open(TrackShipmentModalComponent , {
+      width: "80%"
+    })
+
+    trackShipmentModalRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
     });
   }

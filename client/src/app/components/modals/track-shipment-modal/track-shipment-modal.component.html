@@ -1,0 +1,18 @@
+<header class="p-4 rounded-t-3xl flex justify-between items-center bg-blue-400">
+    <div class="text-xl">
+      Purchase Order No: <span class="text-white">9100056789</span>
+    </div>
+    <div class="">
+      <span>Hansdal coartionsLtd</span>,
+      <span>pooja.shaoo&#64;gmail.com</span>,
+      <span>98965436</span>
+    </div>
+    <div class="flex gap-6 items-center" (click)="addNew()">
+      <lucide-icon class="cursor-pointer" name="plus"></lucide-icon>
+    </div>
+  </header>
+  <mat-dialog-content class="mat-typography" class="relative">
+    <app-track-shipment-table></app-track-shipment-table>
+  </mat-dialog-content>
+  
+  
