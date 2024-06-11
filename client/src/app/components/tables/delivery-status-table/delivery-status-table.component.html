@@ -1,0 +1,46 @@
+<div class="mat-elevation-z8">
+  <div class="grid grid-cols-[auto,1fr,1fr,1fr,1fr] gap-1 bg-gray-200 font-bold">
+    <div class="p-2 w-12">No.</div>
+    <div class="p-2">Item Details</div>
+    <div class="p-2">Quantity Price</div>
+    <div class="p-2">Delivery Date</div>
+    <div class="p-2 w-[23rem]">Delivery Update</div>
+  </div>
+  <div *ngFor="let element of dataSource; let i = index" class="grid grid-cols-[auto,1fr,1fr,1fr,1fr] gap-1 border-b border-gray-300">
+    <div class="p-2 w-12">{{ i + 1 }}</div>
+    <div class="p-2 flex flex-col">
+      <p class="font-medium h-fit" style="margin-bottom: 0.5rem !important ;">{{ element.item_details.name }}</p>
+      <p style="margin-bottom: 0rem !important ;">{{ element.item_details.description }}</p>
+    </div>
+    <div class="p-2 flex flex-col">
+      <p class="font-medium h-fit" style="margin-bottom: 0.5rem !important ;">Unit Rate : {{ element.quantity_price.unit_rate }}</p>
+      <p style="margin-bottom: 0.5rem !important ;">Quantity : {{ element.quantity_price.qty }}</p>
+      <p style="margin-bottom: 0rem !important ;">Total : ${{ element.quantity_price.qty * element.quantity_price.unit_rate }}</p>
+    </div>
+    <div class="p-2 flex flex-col">
+      <p class="font-medium h-fit" style="margin-bottom: 0.5rem !important ;">{{ element.delivery_date.date }}</p>
+      <p style="margin-bottom: 0.5rem !important ;">Ageing : {{ element.delivery_date.ageing }}</p>
+    </div>
+    <!-- <div class="p-2">{{ element.delivery_date.date }}</div> -->
+    <div class="p-2 flex gap-3 w-[23rem]">
+      <div class="max-w-[10rem] max-h-[10rem] overflow-y-scroll">
+        <div *ngFor="let update of element.delivery_update">
+          <p>{{ update }}</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3 h-fit items-center">
+        <button class="border border-black w-fit p-2 rounded-xl" mat-button (click)="openDialog()">New Update</button>
+        <button class="border border-black w-fit p-2 rounded-xl">Mark as Delivered</button>
+        <div class="">
+          <mat-form-field class="w-[10rem] overflow-hidden" title="Choose a Expected delivery Date">
+            <mat-label>Expected Date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

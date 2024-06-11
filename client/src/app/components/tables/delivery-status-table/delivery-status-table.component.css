@@ -1,0 +1,10 @@
+table {
+    width: 100%;
+  }
+  mat-form-field[appearance="none"] .mat-form-field-infix {
+    display: none;
+  }
+  
+  .mdc-text-field{
+    width: 10rem !important;
+  }
