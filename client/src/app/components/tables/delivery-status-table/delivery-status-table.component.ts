@@ -35,7 +35,22 @@ const ELEMENT_DATA: tableElement[] = [
       unit_rate: 40
     },
     delivery_date:{
-      date: new Date("2023-12-15"),
+      date: new Date("2024-6-13"),
+      ageing: "7 days"
+    },
+    delivery_update: ["Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM"]
+  },
+  {
+    item_details: {
+      name: "Cement bags",
+      description: "Portland Cement, 50kg each"
+    },
+    quantity_price: {
+      qty: 100,
+      unit_rate: 40
+    },
+    delivery_date:{
+      date: new Date("2024-4-9"),
       ageing: "15 days"
     },
     delivery_update: ["Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM"]
@@ -50,23 +65,8 @@ const ELEMENT_DATA: tableElement[] = [
       unit_rate: 40
     },
     delivery_date:{
-      date: new Date("2023-12-15"),
-      ageing: "15 days"
-    },
-    delivery_update: ["Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM"]
-  },
-  {
-    item_details: {
-      name: "Cement bags",
-      description: "Portland Cement, 50kg each"
-    },
-    quantity_price: {
-      qty: 100,
-      unit_rate: 40
-    },
-    delivery_date:{
-      date: new Date("2023-12-15"),
-      ageing: "15 days"
+      date: new Date("2024-6-25"),
+      ageing: "10 days"
     },
     delivery_update: ["Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM" , "Updated by: John Doe 10th Dec 2023, 10:30 AM"]
   }

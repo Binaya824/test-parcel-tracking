@@ -1,27 +1,19 @@
 <div class="mat-elevation-z8">
-  <div
-    class="grid grid-cols-[auto,1fr,1fr,1fr,1fr] gap-1 bg-gray-200 font-bold"
-  >
+  <div class="grid grid-cols-[auto,1fr,1fr,1fr,1fr] gap-1 bg-gray-200 font-bold">
     <div class="p-2 w-12">No.</div>
     <div class="p-2">Transporter Name</div>
     <div class="p-2">Consignment Number</div>
     <div class="p-2">Transporter Website</div>
     <div class="p-2"></div>
   </div>
-  <div
-    *ngFor="let element of dataSource; let i = index"
-    class="grid grid-cols-[auto,1fr,1fr,1fr,1fr] gap-1 border-b border-gray-300"
-  >
+  <div *ngFor="let element of dataSource; let i = index" class="grid grid-cols-[auto,1fr,1fr,1fr,1fr] gap-1 border-b border-gray-300">
     <div class="p-2 w-12">{{ i + 1 }}</div>
     <div class="p-2 flex flex-col">
       <input
         type="text"
         [(ngModel)]="element.transporter_name"
         [disabled]="element.disabled"
-        [ngClass]="{
-          '': element.disabled,
-          'border border-black p-1': !element.disabled
-        }"
+        [ngClass]="{ '': element.disabled, 'border border-black p-1': !element.disabled }"
       />
     </div>
     <div class="p-2 flex flex-col">
@@ -29,24 +21,17 @@
         type="text"
         [(ngModel)]="element.consignment_number"
         [disabled]="element.disabled"
-        [ngClass]="{
-          '': element.disabled,
-          'border border-black p-1': !element.disabled
-        }"
+        [ngClass]="{ '': element.disabled, 'border border-black p-1': !element.disabled }"
       />
     </div>
     <div class="p-2 flex flex-col">
       <input
         type="text"
-        [value]="element.transporter_website"
+        [(ngModel)]="element.transporter_website"
         [disabled]="element.disabled"
-        [ngClass]="{
-          '': element.disabled,
-          'border border-black p-1': !element.disabled
-        }"
+        [ngClass]="{ '': element.disabled, 'border border-black p-1': !element.disabled }"
       />
     </div>
-    <!-- <div class="p-2">{{ element.delivery_date.date }}</div> -->
     <div *ngIf="element.disabled; else notDisabled" class="p-2 flex">
       <button class="p-1 bg-[#A6CD94] rounded-md">Show Latest Status</button>
     </div>
